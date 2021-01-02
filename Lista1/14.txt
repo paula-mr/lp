@@ -1,0 +1,17 @@
+(a) i+r
+    Será utilizado o operador int * real -> real.
+
+(b) i+r+i
+    Como não há nenhum parênteses indicando prioridade, os operadores serão executados em ordem.
+    i+r utilizará o operador int * real -> real, resultando em um real e na expressão r+i restante.
+    r+i utilizará o operador real * int -> real.
+
+(c) i+(r+i)
+    Como há o indicador de ordem, r+i será executado primeiro com o operador real * int -> real, resultando em uma operação i+r.
+    i+r utilizará o operador int * real -> real.
+
+(d) i+i+r+(r+i)
+    A operação entre parênteses será executada primeiro, r+i será executado com o operador real * int -> real, resultando em uma operação i+i+r+r.
+    Agora, os operadores serão executados na ordem que aparecem: i+i será executado com o operador int * int -> int, resultando na operação i+r+r.
+    i+r utilizará o operador int * real -> real, resultando na operação r+r.
+    r+r utilizará o operador real * real -> real.

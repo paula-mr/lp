@@ -1,0 +1,1 @@
+fun pow (n : int, e : int) : int = if e = 0 then 1 else n * pow (n, (e-1));

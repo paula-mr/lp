@@ -1,0 +1,1 @@
+fun cube (n : real) : real = n*n*n;
