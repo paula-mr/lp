@@ -1,2 +1,3 @@
-fun allTrue [] = true
-    | allTrue (x::xs) = if not x then false else allTrue(xs);
+fun allTrue [] = false
+    | allTrue (x::[]) = x
+    | allTrue (x::xs) = if x then allTrue(xs) else false;

@@ -1,4 +1,4 @@
-(a) Uma expressão if em SML espera sempre um else. Como ela foi finalizada com um ponto e vírgula, o interpretador considera que essa parte da expressão está errada, pois ainda espera o ELSE, e tenta deletá-lo, resultando nessa mensagem de erro.
+(a) Uma expressão if em SML espera sempre um else, pois toda expressão deve retornar um valor. Como ela foi finalizada com um ponto e vírgula, o interpretador considera que essa parte da expressão está errada, pois ainda espera o ELSE, e tenta deletá-lo, resultando nessa mensagem de erro.
 
 (b) Não é possível fazer o cast dinâmico de valores, e o operador * não está definido para receber um inteiro e um real numa mesma operação, apenas multiplicação de ints com ints ou reais com reais.
 
