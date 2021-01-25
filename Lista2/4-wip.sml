@@ -23,7 +23,8 @@ fun simplify (e: Sexpr) : Sexpr =
       | (Op2 (Mul, IConst 0, _)) => (IConst 0)
       | (Op2 (Mul, _, IConst 0)) => (IConst 0)
       | (Op2 (Mul, a, b)) => (simplify (Op2 (Mul, (simplify a), (simplify b))))
-      | (Op2 (Or, IConst a, IConst b)) => if a = b then (IConst a) else (Op2 (Or, IConst a, IConst b));
+      | (Op2 (Or, IConst a, IConst b)) => if a = b then (IConst a) else (Op2 (Or, IConst a, IConst b))
+      | (Op2 (Or, a, b)) => (Op2 (Or, (simplify a), (simplify b)));
 
 
-simplify (Op2(Mul, Op2(Add, IConst 1, IConst 0), Op2(Add, IConst 9, IConst 0)));
+simplify (Op2 (Mul, Op2 (Add, IConst 1, IConst 0), Op2 (Add, Op2 (Or, IConst 10, IConst 12), IConst 0)));
