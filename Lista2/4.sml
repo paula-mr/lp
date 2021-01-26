@@ -20,7 +20,7 @@ fun simplify (e: Sexpr) : Sexpr =
       in
         case simplifiedI of
           (Op2 a) => (Op1(Not, (Op2 a)))
-          | (a) => (simplify a)
+          | (a) => a
       end
       | (Op2 (Add, a, IConst 0)) => (simplify a)
       | (Op2 (Add, IConst 0, b)) => (simplify b)
@@ -30,8 +30,8 @@ fun simplify (e: Sexpr) : Sexpr =
         val simplifiedB = (simplify b);
       in
         case (simplifiedA, simplifiedB) of
-        (IConst c, d) => (simplify (Op2 (Add, (IConst c), d)))
-        | (c, IConst d) => (simplify (Op2 (Add, c, (IConst d))))
+        (IConst 0, d) => d
+        | (c, IConst 0) => c
         | (c, d) => (Op2 (Add, c, d))
       end 
       | (Op2 (Sub, a, IConst 0)) => (simplify a)
@@ -41,7 +41,7 @@ fun simplify (e: Sexpr) : Sexpr =
         val simplifiedB = (simplify b);
       in
         case (simplifiedA, simplifiedB) of
-        (c, IConst d) => (simplify (Op2 (Sub, c, (IConst d))))
+        (c, IConst 0) => c
         | (c, d) => (Op2 (Sub, c, d))
       end 
       | (Op2 (Mul, IConst 1, b)) => (simplify b)
@@ -55,8 +55,10 @@ fun simplify (e: Sexpr) : Sexpr =
         val simplifiedB = (simplify b);
       in
         case (simplifiedA, simplifiedB) of
-          (IConst c, d) => (simplify (Op2 (Mul, (IConst c), d)))
-        | (c, IConst d) => (simplify (Op2 (Mul, c, (IConst d))))
+        (IConst 1, b) => b
+        | (a, IConst 1) => a
+        | (IConst 0, _) => (IConst 0)
+        | (_, IConst 0) => (IConst 0)
         | (a, b) => (Op2 (Mul, a, b))
       end 
       | (Op2 (Or, a, b)) => 
