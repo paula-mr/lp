@@ -1,0 +1,1 @@
+x:=n; y:=m; z:=x; aux:=y; while ¬(aux=1) do (z:=z*z; aux:=aux-1)
