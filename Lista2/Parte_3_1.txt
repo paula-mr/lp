@@ -1,0 +1,5 @@
+1. a)
+x = 2
+
+b)
+x = 2, pois dentro de r o valor de x está sendo resetado para 1, sobrescrevendo o x de valor 2 do escopo mais geral.

@@ -21,7 +21,8 @@ datatype Stm =
     | Skip
     | Comp of Stm * Stm
     | If of Bexpr * Stm * Stm 
-    | While of Bexpr * Stm;
+    | While of Bexpr * Stm
+    | Repeat of Stm * Bexpr;
 
 fun evalN n : Num = n
 
@@ -57,8 +58,18 @@ fun evalStm (stm : Stm) (s : (string * int) list) : (string * int) list =
             val w = While(b, stm);
         in
             if evaluation then evalStm w newS else newS
+        end
+        | (Repeat(stm, b)) => 
+        let
+            val newS = evalStm stm s;
+            val evaluation = evalB b newS;
+            val r = Repeat(stm, b);
+        in
+            if evaluation then newS else evalStm r newS
         end;
 
 val w = While(Eq(N 5, V "x"), Assign("x", N 6));
 
-evalStm w [("x", 5)];
+val r = Repeat(Assign("x", N 5), Eq(N 5, V "x"));
+
+evalStm r [("x", 10)];

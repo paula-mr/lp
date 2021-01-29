@@ -1,0 +1,17 @@
+2.
+a) 
+Escopo de g = bloco 1
+Escopo de f = bloco 2
+Escopo de h = bloco 3
+
+b) Os nomes definidos são g, x, inc, f, y, h, z, inc de novo.
+
+c)
+g e x pertencem ao bloco 1 e definem, respectivamente, o nome da função e argumento passado.
+inc pertence ao bloco 1 também.
+f e y pertencem ao bloco 1 e também pertencem ao bloco 2, onde definem, respectivamente, o nome da nova função definida e argumento passado.
+h e z pertencem ao bloco 1 também ao bloco 3, onde definem, respectivamente, o nome da função e argumento passados.
+inc é definido dentro do bloco 3.
+
+d) Para SML, que utiliza escopo estático, o valor é 6.
+Caso fosse escopo dinâmico, o valor seria 7, pois ao executar a função h, o escopo alteraria o valor da variável inc de 1 para 2 dentro de seu próprio escopo, que afetaria o escopo geral do programa.

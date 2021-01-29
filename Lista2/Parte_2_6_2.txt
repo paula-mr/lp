@@ -1,0 +1,49 @@
+b)
+
+[repeat tt ns]  <S, s> -> s'     iff B[b] = tt
+[repeat ff ns]  <S, s> -> s'    <repeat S until b, s'> -> s''      iff B[b] == f
+                ______________________________________________
+                        <repeat S until b, s> -> s''
+
+
+d)
+Duas expressões são semanticamente equivalentes se, e somente se:
+<S1, s> -> s' se, e somente se, <S2, s> -> s'
+
+Assim, mostrando a árvore de derivação para repeat S until b
+
+Para b avaliando verdadeiro na primeira iteração:
+
+<S, s> -> s'      <repeat S until b, s'> -> s'
+_______________________________________________
+        <repeat S until b, s> -> s'
+
+
+Para b avaliando falso na primeira iteração:
+
+            <S, s'> -> s''      <repeat S until b, s''> -> s''
+            __________________________________________________
+<S, s> -> s'      <repeat S until b, s'> -> s''
+_______________________________________________
+        <repeat S until b, s> -> s'
+
+Mostrando a árvore de derivação para S; if b then skip else (repeat S until b)
+
+Para b avaliando verdadeiro na primeira iteração:
+
+                                        <skip, s'> -> s'
+                    ____________________________________________________
+<S, s> -> s'        <if b then skip else (repeat S until b), s'> -> s'
+_______________________________________________________________________
+        <S; if b then skip else (repeat S until b), s> -> s'
+
+
+Para b avaliando falso na primeira iteração:
+
+                                <repeat S until b, s'> -> s'
+                    ____________________________________________________
+<S, s> -> s'        <if b then skip else (repeat S until b), s'> -> s''
+_______________________________________________________________________
+        <S; if b then skip else (repeat S until b), s> -> s''
+
+Logo, as duas expressões são equivalentes.
