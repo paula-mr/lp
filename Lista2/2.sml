@@ -18,7 +18,7 @@ fun eval (RConst i) = i
         end
     | eval (ARetangulo (x, y)) = 
         let
-            val side1 = (eval x)
+            val side1 = (eval x);
             val side2 = (eval y)
         in
             side1 * side2

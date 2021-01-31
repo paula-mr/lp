@@ -19,15 +19,15 @@ fun eval (RConst i) = i
         end
     | eval (PRetangulo (x, y)) = 
         let
-            val side1 = (eval x)
+            val side1 = (eval x);
             val side2 = (eval y)
         in
             (2.0 * side1) + (2.0 * side2)
         end
     | eval (PTriangulo (x, y, z)) =
         let
-            val side1 = (eval x)
-            val side2 = (eval y)
+            val side1 = (eval x);
+            val side2 = (eval y);
             val side3 = (eval z)
         in
             side1 + side2 + side3
