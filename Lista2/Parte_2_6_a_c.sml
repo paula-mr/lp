@@ -72,4 +72,4 @@ val w = While(Eq(N 5, V "x"), Assign("x", N 6));
 
 val r = Repeat(Assign("x", N 5), Eq(N 5, V "x"));
 
-evalStm r [("x", 10)];
+evalStm w [("x", 10)];

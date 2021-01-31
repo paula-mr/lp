@@ -1,7 +1,7 @@
 b)
 
 [repeat tt ns]  <S, s> -> s'     iff B[b] = tt
-[repeat ff ns]  <S, s> -> s'    <repeat S until b, s'> -> s''      iff B[b] == f
+[repeat ff ns]  <S, s> -> s'    <repeat S until b, s'> -> s''      iff B[b] == ff
                 ______________________________________________
                         <repeat S until b, s> -> s''
 

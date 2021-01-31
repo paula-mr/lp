@@ -1,1 +1,5 @@
-x:=n; y:=m; z:=x; aux:=y; while ¬(aux=1) do (z:=z*z; aux:=aux-1)
+x:=n;
+y:=m;
+z:=1;
+i:=1;
+while (i<=y) do (z:=z*x; i:=i+1)

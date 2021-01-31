@@ -73,6 +73,7 @@ fun simplify (e: Sexpr) : Sexpr =
 
 simplify (Op1 (Not, (Op2 (Add, IConst 10, IConst 2))));
 simplify (Op2 (Or, (Op2 (Mul, IConst 10, IConst 12)), (Op2 (Mul, IConst 10, IConst 12))));
+simplify (Op2 (Or, (Op2 (Mul, IConst 10, IConst 12)), (Op2 (Mul, IConst 10, IConst 13))));
 simplify (Op2(Mul, Op2(Add, IConst 1, IConst 0), Op2(Add, IConst 9, IConst 0)));
 simplify (Op2 (Mul, Op2 (Add, IConst 1, IConst 0), Op2 (Add, Op2 (Or, IConst 10, IConst 12), IConst 0)));
 simplify (Op2 (Add, Op2 (Mul, IConst 3, IConst 4), Op2 (Gt, Op2 (Or, IConst 10, IConst 12), IConst 10)));

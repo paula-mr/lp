@@ -1,5 +1,5 @@
 1. a)
-x = 2
+x = 1, pois q altera x do escopo de p, porém em r o x é outro, que está sendo declarado no próprio escopo de r.
 
 b)
 x = 2, pois dentro de r o valor de x está sendo resetado para 1, sobrescrevendo o x de valor 2 do escopo mais geral.
