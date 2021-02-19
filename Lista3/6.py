@@ -10,23 +10,30 @@ class HeapManager:
         self.memory = initialMemory
         self.memory[0] = self.memory.__len__()
         self.memory[1] = NULL
-        self.freeStart = 0
+
+    def __get_best_fit(self, requestSize):
+        p = 0
+        size, index = self.memory[0], 0
+        while p < len(self.memory) and self.memory[p] != requestSize:
+            if self.memory[p] == requestSize and self.memory[p+1] == -1:
+                return p
+            if size >= self.memory[p] and requestSize <= self.memory[p] and self.memory[p+1] == -1:
+                size = self.memory[p]
+                index = p
+            p += self.memory[p]
+        return index if requestSize <= self.memory[index] and self.memory[index+1] == -1 else NULL
 
     def allocate(self, requestSize):
         """Allocates a block of data, and return its address. The parameter
         requestSize is the amount of space that must be allocated."""
         size = requestSize + 1
-        # Do first -fit search: linear search of the free list for the first block
-        # of sufficient size.
-        p = self.freeStart
-        lag = NULL
-        while p != NULL and self.memory[p] < size:
-            lag = p
-            p = self.memory[p + 1]
+        # Do best -fit search
+        p = self.__get_best_fit(requestSize)
         if p == NULL:
             raise MemoryError()
+        # set space as occupied
+        self.memory[p + 1] = 1
 
-        nextFree = self.memory[p + 1]
         # Now p is the index of a block of sufficient size,
         # lag is the index of p's predecessor in the
         # free list, or NULL, and nextFree is the index of
@@ -39,19 +46,14 @@ class HeapManager:
         if unused > 1:
             nextFree = p + size
             self.memory[nextFree] = unused
-            self.memory[nextFree + 1] = self.memory[p + 1]
+            # Set memory block as unused
+            self.memory[nextFree + 1] = -1
             self.memory[p] = size
-
-        if lag == NULL:
-            self.freeStart = nextFree
-        else:
-            self.memory[lag + 1] = nextFree
             
         return p + 1
 
     def deallocate(self, address):
-        self.memory[address] = self.freeStart
-        self.freeStart = address - 1
+        self.memory[address] = -1
 
 
 def test():
