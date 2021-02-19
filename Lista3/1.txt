@@ -1,0 +1,1 @@
+b) é a alternativa mais adequada, as outras descrevem basicamente o estado de um programa, mas é preciso também armazenar as operações que devem ser executadas.

@@ -1,0 +1,11 @@
+Mark and sweep: quando um objeto é criado, ele é marcado como "falso". Na fase de mark, avaliamos todos os objetos que são alcançaveis a partir da raiz. Na fase de sweep, deletamos todos os que não são alcançáveis.
+    Essa abordagem não afeta a fragmentação da heap e requer extensa análise de memória, pois é preciso iterar duas vezes sobre ela.
+    Assim, essa é uma abordagem simples e efetiva para aplicações que armazenam objetos de tamanhos similares (assim a fragmentação não é um problema) e com baixa utilização da memória, de forma que o processamento não carregará excessivamente a CPU.
+
+Copying collector: estratégia em que a heap é dividida em duas partes, sendo que apenas uma é utilizada por vez. Quando essa primeira parte enche, apenas os blocos relevantes são copiados para a segunda parte, e a primeira parte é apagada.
+    Essa abordagem soluciona o problema de fragmentação, porém adiciona ao custo de análise o custo de cópia.
+    Assim, essa é uma abordagem que pode ser aplicada quando são utilizados objetos de tamanhos muito variáveis, pois a alocação será otimizada, mas mais uma vez ela não deve ser utilizada para programas com alta utilização de memória, devido ao alto custo de análise dos objetos alcançáveis e subsequente cópia.
+
+Reference counting: todo bloco de memória é associado a um contador, que é incrementado quando um novo escopo passa a utilizá-lo, e decrementado quando ele deixa de ser utilizado. Quando o contador chega a 0, o bloco é descartado. Isso faz com que a análise de memória seja incremental.
+    Essa abordagem retira o problema das extensivas análises de memória, e torna o processo mais rápido e sem requerer pausas, porém adiciona o custo e o risco de manter os contadores sempre atualizados, podendo causar memory leaks e dangling pointers.
+    Assim, essa abordagem deve ser utilizada por sistemas de tempo real em que a responsividade é essencial.

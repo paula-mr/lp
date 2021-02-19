@@ -1,0 +1,9 @@
+Tipos de memória:
+- valor_inicial: memória estática, pois é uma variável global
+- valor_intermediario: memória estática, pois é uma variável global
+- taxa: memória dinâmica -> stack, pois é uma variável de escopo
+- valores: memória dinâmica -> heap, pois está sendo definida como ponteiro, com uso de malloc
+
+Valores finais:
+valores = [25, 75, 15]
+
