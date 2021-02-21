@@ -1,0 +1,12 @@
+a)
+Temos o overload de operadores nas linhas 6 e 7, pois definimos que ao utilizar * ou -> diretamente nessa classe, acessamos o valor do ponteiro definido.
+Temos também o overload de funções, ao definir o constructor e destructor.
+
+b)
+Não houve nenhum erro, pois ao finalizar a execução o destrutor da classe auto_ptr é executado, que deleta o ponteiro alocado.
+
+c)
+Não houve nenhum erro, pelo mesmo motivo anterior, o destrutor de auto_ptr é executado.
+
+d)
+Nesse caso houve um erro de memory leak, que aconteceu pois a linha 5 "delete p" nunca chega a ser executada, devido ao throw na linha anterior. O ideal, nesses casos, é adicionar uma cláusula "finally" para que o delete seja sempre executado.
