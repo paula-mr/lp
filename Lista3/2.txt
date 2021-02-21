@@ -1,4 +1,4 @@
-a) F - ela não é gerenciada, pois é determinada antes da execução do programa e permanece imutável.
+a) V - a memória é definida antes da execução e permanece fixa durante a execução, então seu gerenciamento pode ser feito automaticamente.
 b) F - a stack da memória dinâmica possui gerenciamento automático.
 c) F - a heap da memória dinâmica possui gerenciamento manual.
 d) F - a memória dinâmica é flexível, ao contrário da memória estática que é fixa.

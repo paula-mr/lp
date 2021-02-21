@@ -14,7 +14,7 @@ class HeapManager:
     def __get_best_fit(self, requestSize):
         p = 0
         size, index = self.memory[0], 0
-        while p < len(self.memory) and self.memory[p] != requestSize:
+        while p < len(self.memory):
             if self.memory[p] == requestSize and self.memory[p+1] == -1:
                 return p
             if size >= self.memory[p] and requestSize <= self.memory[p] and self.memory[p+1] == -1:
@@ -55,7 +55,6 @@ class HeapManager:
     def deallocate(self, address):
         self.memory[address] = -1
 
-
 def test():
     h = HeapManager([0 for x in range(0, 10)])
     print(h.memory)
@@ -69,6 +68,7 @@ def test():
     print("Deallocated a Memory = ", h.memory)
     h.deallocate(b)
     print("Deallocated b Memory = ", h.memory)
-
+    b = h.allocate(2)
+    print("b = ", b, ", Memory = ", h.memory)
 
 test()

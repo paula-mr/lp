@@ -1,6 +1,6 @@
 a)
 Temos o overload de operadores nas linhas 6 e 7, pois definimos que ao utilizar * ou -> diretamente nessa classe, acessamos o valor do ponteiro definido.
-Temos também o overload de funções, ao definir o constructor e destructor.
+Temos também o polimorfismo paramétrico devido ao uso de templates.
 
 b)
 Não houve nenhum erro, pois ao finalizar a execução o destrutor da classe auto_ptr é executado, que deleta o ponteiro alocado.
