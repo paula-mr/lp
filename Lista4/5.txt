@@ -1,0 +1,4 @@
+#1 "Pavao is an animal"
+#2 "Tigre is a mammal"
+#3 "Krypto is a dog"
+#4
