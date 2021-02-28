@@ -1,4 +1,13 @@
-#1 "Pavao is an animal"
-#2 "Tigre is a mammal"
-#3 "Krypto is a dog"
-#4
+#1 i - "Pavao is an animal"
+#2 i - "Tigre is a mammal"
+#3 i - "Krypto is a dog"
+#4 i - "Pavao, which is an animal, is eating."
+#5 i - "Tigre, which is a mammal, is sucking milk."
+#6 i - "Tigre, which is an animal, is eating."
+#7 i - "Krypto is barking rather loudly."
+#8 i - "Krypto, which is a mammal, is sucking milk."
+#9 i -  "Krypto barks when it eats."
+        "Krypto is barking rather loudly."
+#10 ii - erro, animal não implementa barking
+#11 i - "Krypto is barking rather loudly." 
+    Na verdade da maneira que está essa linha nunca será executada pois a execução será interrompida, acima está o resultado caso a linha fosse executada.

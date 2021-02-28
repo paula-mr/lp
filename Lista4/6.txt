@@ -1,0 +1,18 @@
+Problema do diamante se refere ao problema de decisão quando uma classe herda de duas ou mais outras classes que implementam o mesmo método.
+Se a classe filha não implementar por cima (override) este método que suas classes pais implementam, ao ser invocado, será preciso decidir de qual dos pais será invocado este método.
+
+Então, por exemplo, temos:
+
+class A:
+    def do_something(self):
+        print("A did something")
+
+class B:
+    def do_something(self):
+        print("B did something")
+
+class C(A, B):
+    def do(self):
+        self.do_something()
+
+C não dá override em do_something, então ao invocá-lo, o interpretador perceberá que ambos os pais implementam este método e terá que decidir qual invocar. Em Python, o problema é resolvido por linearização, ou seja, o primeiro método é escolhido. Já em C++, é lançado um erro de ambiguidade.
