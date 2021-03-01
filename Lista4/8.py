@@ -47,5 +47,3 @@ def __main__():
         pass
 
 __main__()
-
-# TODO perguntar da stack trace

@@ -1,10 +1,9 @@
 signature MATH =
 sig
-    type math
-    val fact : int -> math
-    val halfPi : math
-    val pow : int * int -> math
-    val double : int -> math
+    val fact : int -> int
+    val halfPi : real
+    val pow : int * int -> int
+    val double : int -> int
 end;
 
 structure MyMathLib =
@@ -14,8 +13,3 @@ struct
     val halfPi = 3.14 / 2.0
     fun pow (x, y) = if y = 0 then 1 else x * pow(x, y-1)
 end;
-
-MyMathLib.fact(5);
-MyMathLib.double(2);
-MyMathLib.halfPi;
-MyMathLib.pow(3,3);
