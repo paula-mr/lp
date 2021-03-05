@@ -1,0 +1,33 @@
+a)
+#define SUM(X, Y) (X) + (Y)
+
+int main (int argc, char** argv) {
+    printf ("sum = %d\n", SUM(argc, argv[0][0]));
+}
+
+= 
+
+int main (int argc, char** argv) {
+    printf ("sum = %d\n", (argc) + (argv[0][0]));
+}
+
+b) A captura de variáveis é um erro de programação causado quando tentamos "substituir" o nome de uma variável por outro que já está em uso, causando comportamentos inadequados devido a esse conflito de escopos.
+Isso acontece em Macros pois elas são expandidas textualmente, então se no escopo que elas são expandidas houver uma variável de mesmo nome, aquela variável será alterada também.
+
+c)
+#include <stdio.h>
+
+#define IIF(X, Z) (X == 1 ? X : Z)
+
+int increment(int &a) {
+    return ++a;
+}
+
+int main () {
+    int a = 0, b = -1;
+
+    printf ("se X = 1, imprimir X, senao, imprimir -1 = %d\n", IIF(increment(a), b));
+}
+
+Aqui está um exemplo de avaliação dupla, passamos por parâmetro a função increment(a) e também o valor de b. Caso o primeiro parâmetro avalie para 1, retornamos ele, caso contrário, retornamos b (igual a -1).
+Porém, ao executarmos essa função, temos como resultado 2, o que não faz sentido, pois ou temos x == 1, ou temos -1. Assim, vemos que como x é avaliado duas vezes, o valor que era 1 na primeira execução é incrementado para 2.
