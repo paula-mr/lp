@@ -1,0 +1,4 @@
+a) Variáveis que ocupam muita memória e precisam ser modificadas devem ser passadas por referência. Isso porque a duplicação de memória apresentará o custo de ocupar memória extra.
+Um exemplo prático disso seria uma função de ordenar um array que receberá uma lista com milhões de entradas. Se a passagem for feita por valor, essas milhões de entradas serão duplicadas na memória momentaneamente e haverá o custo adicional de desalocação depois.
+
+b) Na stack.

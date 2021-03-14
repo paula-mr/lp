@@ -1,0 +1,9 @@
+a) m1.i = 4 e m2.i = 4, isso porque ao criar uma nova instância e atribuir para j, a referência a j original é perdida dentro de swap1 e seu valor nunca é alterado.
+
+b) m1.i = 3 e m2.i = 3, pois é passado para tmp a referência de j, de forma que ao substituir o valor para i, o valor da variável tmp também é alterado.
+
+c) m1.1 = 4 e m2.i = 4, pois ao passar um valor primitivo para swap3 e alterá-lo, a referência não será alterada.
+
+d) Por valor.
+
+e) Por referência.

@@ -1,0 +1,20 @@
+a) 30.
+k está vinculado a i e u está vinculado a i^2.
+Ao executar, vinculamos a k e u o valor de m (1).
+
+1 iteração:
+i = 1, s = 1
+
+2 iteração:
+i = 2, s = 1 + 4
+
+3 iteração:
+i = 3, s = 5 + 9
+
+4 iteração:
+i = 4, s = 14 + 16
+
+b) 
+Esse comando fará 100 iterações somando o valor calculado por u, que depende daquele passado em k.
+O que acontece é que, como a cada iteração i aumenta, o valor calculado diminui exponencialmente, pois o denominador está elevado ao quadrado.
+Assim, para a = 0, temos o resultado sempre 1 (como Z é inteiro, ele é truncado/arredondado). Para a > 0, teremos sempre 0.
