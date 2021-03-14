@@ -6,4 +6,4 @@ c) m1.1 = 4 e m2.i = 4, pois ao passar um valor primitivo para swap3 e alterá-l
 
 d) Por valor.
 
-e) Por referência.
+e) Em java, todos os valores são passados por valor, porém para objetos esse valor corresponde a uma referência ao objeto real, então ao alterá-lo, ele altera o valor real.

@@ -12,7 +12,7 @@ int main (int argc, char** argv) {
 }
 
 b) A captura de variáveis é um erro de programação causado quando tentamos "substituir" o nome de uma variável por outro que já está em uso, causando comportamentos inadequados devido a esse conflito de escopos.
-Isso acontece em Macros pois elas são expandidas textualmente, então se no escopo que elas são expandidas houver uma variável de mesmo nome, aquela variável será alterada também.
+Isso acontece em Macros pois elas são expandidas textualmente, sem criar um escopo próprio, então se no escopo que elas são expandidas houver uma variável de mesmo nome, aquela variável será alterada também.
 
 c)
 #include <stdio.h>
